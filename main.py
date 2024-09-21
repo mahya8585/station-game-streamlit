@@ -1,14 +1,17 @@
 import redis
 import streamlit as st
+import os
 
 NO_DESTINATION_MSG = '**行先は未定です**'
+HOST_NAME = os.environ['HOST_NAME']
+ACCESS_KEY = os.environ['PASSWORD']
 
 # DB接続
 redis_conn = redis.StrictRedis(
-        host='HOST_NAME',
+        host=HOST_NAME,
         port=6380,
         db=0,
-        password='ACCESS_KEY',
+        password=ACCESS_KEY,
         ssl=True
     )
 
