@@ -5,11 +5,12 @@ import os
 NO_DESTINATION_MSG = '**行先は未定です**'
 HOST_NAME = os.environ['HOST_NAME']
 ACCESS_KEY = os.environ['PASSWORD']
+PORT = os.environ['PORT']
 
 # DB接続
 redis_conn = redis.StrictRedis(
         host=HOST_NAME,
-        port=6380,
+        port=PORT,
         db=0,
         password=ACCESS_KEY,
         ssl=True
